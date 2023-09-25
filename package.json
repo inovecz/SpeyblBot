@@ -1,6 +1,6 @@
 {
     "name": "speyblbot",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Microsoft Teams Toolkit Notification Bot Sample",
     "engines": {
         "node": "16 || 18"
