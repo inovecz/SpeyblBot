@@ -31,7 +31,7 @@ module.exports = async function (context, req) {
           AdaptiveCards.declare(notificationTemplate).render({
             title: notificationTitle,
             appName: "Speybl",
-            description: notificationMessage + ' ' + JSON.stringify(member),
+            description: notificationMessage,
             notificationUrl: "https://speybl.com",
           })
         );
