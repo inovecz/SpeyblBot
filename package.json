@@ -1,7 +1,7 @@
 {
-    "name": "speybl",
-    "version": "1.0.5",
-    "description": "Microsoft Teams Toolkit Notification Bot Sample",
+    "name": "Speybl",
+    "version": "1.0.7",
+    "description": "Speybl is Microsoft Teams notification bot for Speybl application.",
     "engines": {
         "node": "16 || 18"
     },

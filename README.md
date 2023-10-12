@@ -1,142 +1,41 @@
-# Overview of the Notification bot template
+**Introducing Speybl, Your Personal Teams Notification Bot**
 
-This template showcases an app that send a message to Teams with Adaptive Cards triggered by a HTTP post request or timer schedule. You can further extend the template to consume, transform and post events to individual, chat or channel in Teams.
+Speybl is your dedicated Microsoft Teams notification bot, designed to simplify communication and enhance productivity within your organization. With Speybl, you can streamline your notification system and efficiently manage various crucial aspects of your workplace, ensuring that nothing goes unnoticed.
 
-The app template is built using the TeamsFx SDK, which provides a simple set of functions over the Microsoft Bot Framework to implement this scenario.
+**Key Features:**
 
-## Get Started with the Notification bot
+1. **Real-Time Notifications:** Speybl is your eyes and ears within Microsoft Teams. It delivers instant notifications to relevant team members when important actions occur. Whether it's a document to sign, attendance notifications, leave requests, salary changes, form submissions, or upcoming events, Speybl ensures that you're always in the know.
 
->
-> **Prerequisites**
->
-> To run the notification bot template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 16, 18
-> - An [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
-> - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [TeamsFx CLI](https://aka.ms/teamsfx-cli)
->
-> **Note**
->
-> Your app can be installed into a team, or a group chat, or as personal app. See [Installation and Uninstallation](https://aka.ms/teamsfx-notification-new#customize-installation).
+2. **Document Signatures:** Never miss a document that needs your signature again. Speybl will notify you the moment a document is ready for your approval, ensuring timely responses and streamlined workflows.
 
-1. First, select the Teams Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Press F5 to start debugging which launches your app in Teams using a web browser. Select `Debug (Edge)` or `Debug (Chrome)`.
-4. When Teams launches in the browser, select the Add button in the dialog to install your app to Teams.
-5. If you select `Timer Trigger`, wait for 30 seconds. If you select `HTTP Trigger`, send a POST request to `http://<endpoint>/api/notification` with your favorite tool (like `Postman`)
+3. **Attendance Management:** For management, Speybl is an indispensable tool for directly managing attendance requests from employees. Approve or decline leave requests, review attendance logs, and keep your workforce organized with ease.
 
-   - When your project is running locally, replace `<endpoint>` with `localhost:3978`
-   - When your project is deployed to Azure App Service, replace `<endpoint>` with the url from Azure App Service
+4. **Salary Updates:** Speybl ensures that changes in salary, bonuses, or deductions are promptly communicated to employees. This transparent and real-time approach fosters trust and clarity within the organization.
 
-The bot will send an Adaptive Card to Teams:
+5. **Form Actions:** Receive immediate notifications when forms are submitted. Whether it's for HR purposes, surveys, or internal requests, Speybl keeps you informed and in control.
 
-![Notification Message in Teams](https://user-images.githubusercontent.com/7642967/223006044-5003574e-2aee-4a41-9b71-c103d0439012.png)
+6. **Event Notifications:** Stay informed about upcoming events, meetings, and important dates. Speybl sends reminders and details directly to your Microsoft Teams channel, so you're always prepared.
 
-## What's included in the template
+**How Speybl Works:**
 
-| Folder / File | Contents |
-| - | - |
-| `teamsapp.yml` | Main project file describes your application configuration and defines the set of actions to run in each lifecycle stages |
-| `teamsapp.local.yml`| This overrides `teamsapp.yml` with actions that enable local execution and debugging |
-| `env/`| Name / value pairs are stored in environment files and used by `teamsapp.yml` to customize the provisioning and deployment rules |
-| `.vscode/` | VSCode files for debugging |
-| `appPackage/` | Templates for the Teams application manifest |
-| `infra/` | Templates for provisioning Azure resources |
-| `src/` | The source code for the notification Teams application |
+Speybl seamlessly integrates with Microsoft Teams, ensuring a hassle-free experience for all users. Here's how it operates:
 
-The following files can be customized and demonstrate an example implementation to get you started.
+1. **User Notifications:** When a relevant action occurs, Speybl sends a notification directly to the users involved. This keeps everyone informed and ensures swift responses.
 
-| File | Contents |
-| - | - |
-| `*Trigger/function.json` | Azure Function bindings for the notification trigger |
-| `src/*Trigger.js` | Notification trigger implementation |
-| `src/teamsBot.js` | An empty teams activity handler for bot customization |
-| `src/adaptiveCards/notification-default.json` | A generated Adaptive Card that is sent to Teams |
+2. **Management Actions:** Managers and administrators can access a dedicated actions to manage attendance requests.
 
-The following files implement the core notification on the Bot Framework. You generally will not need to customize these files.
+3. **Customization:** Speybl can be tailored to your organization's specific needs, allowing you to choose what actions trigger notifications and who receives them.
 
-| File / Folder | Contents |
-| - | - |
-| `src/internal/initialize.js` | Application initialization |
-| `messageHandler/` | Azure Function bindings to implement Bot protocol |
-| `src/internal/messageHandler.js`<br/>`src/internal/responseWrapper.js` | Bot protocol implementation |
+### Benefits:
 
-The following files are project-related files. You generally will not need to customize these files.
+- **Enhanced Productivity:** Speybl helps streamline internal processes, reducing the time spent on administrative tasks and improving overall productivity.
 
-| File / Folder | Contents |
-| - | - |
-| `.funcignore` | Azure Functions ignore file to exclude local files |
-| `.gitignore` | Git ignore file |
-| `host.json` | Azure Functions host file |
-| `local.settings.json` | Azure Functions settings for local debugging |
-| `package.json` | NPM package file |
+- **Improved Communication:** Real-time notifications ensure that crucial information is conveyed promptly, fostering better collaboration and transparency.
 
-## Extend the notification bot template
+- **Efficient HR Management:** Managers can easily approve or decline attendance requests, making HR management more efficient and employee-friendly.
 
-There are few customizations you can make to extend the template to fit your business requirements.
+- **Event Reminders:** Never miss an important meeting or event again with Speybl's event notification feature.
 
-1. [Step 1: Customize the trigger point from event source](#step-1-customize-the-trigger-point-from-event-source)
-2. [Step 2: Customize the notification content](#step-2-customize-the-notification-content)
-3. [Step 3: Customize where notifications are sent](#step-3-customize-where-notifications-are-sent)
+**Get Started with Speybl:**
 
-### Step 1: Customize the trigger point from event source
-
-If you selected `timer` trigger, the default Azure Function timer trigger (`src/timerTrigger.js`) implementation simply sends a hard-coded Adaptive Card every 30 seconds. You can edit the file `*Trigger/function.json` to customize the `schedule` property. Refer to the [Azure Function documentation](https://docs.microsoft.com/azure/azure-functions/functions-bindings-timer?tabs=in-process&pivots=programming-language-javascript#ncrontab-expressions) for more details.
-
-If you selected `http` trigger, when this trigger is hit (via a HTTP request), the default implementation sends a hard-coded Adaptive Card to Teams. You can change this behavior by customizing `src/*Trigger.js`. A typical implementation might make an API call to retrieve some events and/or data, and then send an Adaptive Card as appropriate.
-
-You can also add any Azure Function trigger. For example:
-
-- You can use an `Event Hub` trigger to send notifications when an event is pushed to Azure Event Hub.
-- You can use a `Cosmos DB` trigger to send notifications when a Cosmos document has been created or updated.
-
-See Azure Functions [supported triggers](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings?tabs=javascript#supported-bindings).
-
-## Step 2: Customize the notification content
-
-`src/adaptiveCards/notification-default.json` defines the default Adaptive Card. You can add, edit, or remove properties and their bindings (e.g., `${title}`) to customize the Adaptive Card to your needs. You can use the [Adaptive Card Designer](https://adaptivecards.io/designer/) to help visually design your Adaptive Card UI.
-
-You can also add new cards if needed. Follow this [sample](https://aka.ms/teamsfx-adaptive-card-sample-new) to see how to build different types of adaptive cards with a list or a table of dynamic contents using `ColumnSet` and `FactSet`.
-
-### Step 3: Customize where notifications are sent
-
-Notifications can be sent to where the bot is installed:
-
-- [Send notifications to a channel](https://aka.ms/teamsfx-notification-new#send-notifications-to-a-channel)
-- [Send notifications to a group chat](https://aka.ms/teamsfx-notification-new#send-notifications-to-a-group-chat)
-- [Send notifications to a personal chat](https://aka.ms/teamsfx-notification-new#send-notifications-to-a-personal-chat)
-
-You can also send the notifications to a specific receiver:
-
-- [Send notifications to a specific channel](https://aka.ms/teamsfx-notification-new#send-notifications-to-a-specific-channel)
-- [Send notifications to a specific person](https://aka.ms/teamsfx-notification-new#send-notifications-to-a-specific-person)
-
-Congratulations, you've just created your own notification! To learn more about extending the notification bot template, [visit the documentation on Github](https://aka.ms/teamsfx-notification-new). You can find more scenarios like:
-
-- [Customize storage](https://aka.ms/teamsfx-notification-new#customize-storage)
-- [Customize adapter](https://aka.ms/teamsfx-notification-new#customize-adapter)
-- [Customize the way to initialize the bot](https://aka.ms/teamsfx-notification-new#customize-initialization)
-- [Add authentication for your notification API](https://aka.ms/teamsfx-notification-new#add-authentication-for-your-notification-api)
-- [Connect to existing APIs](https://aka.ms/teamsfx-notification-new#connect-to-existing-api)
-- [Frequently asked questions](https://aka.ms/teamsfx-notification-new#frequently-asked-questions)
-
-## Extend notification bot with other bot scenarios
-
-Notification bot is compatible with other bot scenarios like command bot and workflow bot.
-
-### Add command to your application
-
-The command and response feature adds the ability for your application to "listen" to commands sent to it via a Teams message and respond to commands with Adaptive Cards. Follow the [steps here](https://aka.ms/teamsfx-command-new#How-to-add-more-command-and-response) to add the command response feature to your workflow bot. Refer [the command bot document](https://aka.ms/teamsfx-command-new) for more information.
-
-### Add workflow to your notification bot
-
-Adaptive cards can be updated on user action to allow user progress through a series of cards that require user input. Developers can define actions and use a bot to return an Adaptive Cards in response to user action. This can be chained into sequential workflows. Follow the [steps here](https://aka.ms/teamsfx-workflow-new#add-more-card-actions) to add workflow feature to your command bot. Refer [the workflow document](https://aka.ms/teamsfx-workflow-new) for more information.
-
-## Additional information and references
-
-- [Manage multiple environments](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-multi-env)
-- [Collaborate with others](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-collaboration)
-- [Teams Toolkit Documentations](https://docs.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals)
-- [Teams Toolkit CLI](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-cli)
-- [TeamsFx SDK](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-sdk)
-- [Teams Toolkit Samples](https://github.com/OfficeDev/TeamsFx-Samples)
+Experience the power of Speybl by integrating it into your Microsoft Teams environment. Say goodbye to missed notifications and hello to a more organized and efficient workplace. Get Speybl today, and watch your workplace communication and management reach new heights.

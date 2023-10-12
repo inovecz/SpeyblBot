@@ -13,8 +13,6 @@ module.exports = async function (context, req) {
   const notificationMessage = context.req.body.message;
   const notificationActions = context.req.body.actions
 
-  console.log(context.req.body);
-
   const pageSize = 100;
   let continuationToken = undefined;
   do {
