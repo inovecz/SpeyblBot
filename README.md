@@ -39,3 +39,12 @@ Speybl seamlessly integrates with Microsoft Teams, ensuring a hassle-free experi
 **Get Started with Speybl:**
 
 Experience the power of Speybl by integrating it into your Microsoft Teams environment. Say goodbye to missed notifications and hello to a more organized and efficient workplace. Get Speybl today, and watch your workplace communication and management reach new heights.
+
+**Links:**
+- **Sign-up:** https://www.speybl.com
+- **Get Started:** https://www.speybl.com
+- **Contact Us:** https://www.speybl.com
+- **Help:** https://www.speybl.com
+
+**Requirements:**
+- Users must have an active accounts in Speybl application, please contact our support team on hello@speybl.com for more details.
