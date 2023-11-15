@@ -1,6 +1,6 @@
 {
     "name": "Speybl",
-    "version": "1.0.9",
+    "version": "1.0.13",
     "description": "Speybl is Microsoft Teams notification bot for Speybl application.",
     "engines": {
         "node": "16 || 18"
