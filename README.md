@@ -6,15 +6,11 @@ Speybl is your dedicated Microsoft Teams notification bot, designed to simplify 
 
 1. **Real-Time Notifications:** Speybl is your eyes and ears within Microsoft Teams. It delivers instant notifications to relevant team members when important actions occur. Whether it's a document to sign, attendance notifications, leave requests, salary changes, form submissions, or upcoming events, Speybl ensures that you're always in the know.
 
-2. **Document Signatures:** Never miss a document that needs your signature again. Speybl will notify you the moment a document is ready for your approval, ensuring timely responses and streamlined workflows.
+2. **New Internal Document:** A new internal document has been added to the repository. Stay informed and get notified by Microsoft Teams. Explore the document to stay up-to-date on critical information.
 
-3. **Attendance Management:** For management, Speybl is an indispensable tool for directly managing attendance requests from employees. Approve or decline leave requests, review attendance logs, and keep your workforce organized with ease.
+3. **New Payroll:** Great news! A new payroll document has been added. Keep notified of financial updates effortlessly within Microsoft Teams. Check the details and ensure everything aligns seamlessly with your financial records.
 
-4. **Salary Updates:** Speybl ensures that changes in salary, bonuses, or deductions are promptly communicated to employees. This transparent and real-time approach fosters trust and clarity within the organization.
-
-5. **Form Actions:** Receive immediate notifications when forms are submitted. Whether it's for HR purposes, surveys, or internal requests, Speybl keeps you informed and in control.
-
-6. **Event Notifications:** Stay informed about upcoming events, meetings, and important dates. Speybl sends reminders and details directly to your Microsoft Teams channel, so you're always prepared.
+4. **New Attendance Request:** An attendance request has been submitted. Keep your schedules organized by reviewing and responding to attendance requests promptly. Ensure smooth coordination with your team by staying on top of attendance updates directly from Microsoft Teams.
 
 **How Speybl Works:**
 

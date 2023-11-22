@@ -23,13 +23,13 @@ module.exports = async function (context, req) {
     const installations = pagedData.data;
     continuationToken = pagedData.continuationToken;
 
-    for (const target of installations) {
-
-      if (target.type === NotificationTargetType.Person) {
         // Directly notify the individual person
         const member = await notificationApp.notification.findMember(
           async (m) => m.account.aadObjectId === notificationUserId
         );
+
+  
+
         
           let notificationData = {
             title: notificationTitle,
@@ -56,8 +56,7 @@ module.exports = async function (context, req) {
                 AdaptiveCards.declare(twoActionsTemplate).render(notificationData)
               );
             }
-          }
-      }
+
     }
   } while (continuationToken);
   context.res = {};
